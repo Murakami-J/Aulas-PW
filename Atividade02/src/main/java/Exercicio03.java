@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Exercicio03 {
@@ -10,27 +12,21 @@ public class Exercicio03 {
             numero = sc.nextInt();
         } while(numero < 0);
 
-
-
-  /*      int n1 = 1;
-        int n2 = 2;
-        int fibonacci = 0;
+        List<Integer> sequencia = new ArrayList<>();
         int contador = 0;
-        int a = 0;
+        int fibonacci;
 
-        while(contador <= numero){
-            if(contador < 3){
-                System.out.println(a + contador);
-                contador++;
+        while (contador < numero) {
+            if (contador < 2) {
+                sequencia.add(contador);
+            } else {
+                fibonacci = sequencia.get(contador - 1) + sequencia.get(contador - 2);
+                sequencia.add(fibonacci);
             }
-            else{
-                fibonacci = n1 + n2;
-                System.out.println(fibonacci);
-                n1 = n2;
-                n2 = fibonacci;
-                contador++;
-            }
+            contador++;
+        }
 
-        }*/
+        System.out.println("Sequência de fibonacci");
+        System.out.println(sequencia);
     }
 }
